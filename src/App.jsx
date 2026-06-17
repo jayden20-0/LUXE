@@ -1,29 +1,26 @@
-import {Route, Routes} from 'react-router-dom'
-import Homepage from './Homepage'
-import {Shop} from './components/Shop'
-import {Contact} from './components/Contact'
-import Navbar from './components/Navbar'
-import {About} from './components/About'
-import { Footer } from "./components/Footer";
+import { Route, Routes } from "react-router-dom";
+
+import Homepage from "./components/Homepage";
+import AddProduct from "./components/AddProduct";
+import EditProduct from "./components/EditProduct";
+
+import Navbar from "./components/Navbar"
+
+import "./App.css";
 
 function App() {
-
   return (
-<>
-    <Routes>
-      <Route path='/' element={<Homepage />} />
-      <Route path='/about' element={<About />} />
-      <Route path='/contact' element={<Contact />} />
-      <Route path='/shop' element={<Shop />} />
-    
-    </Routes>
+    <>
+      <Navbar />
 
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/add-product" element={<AddProduct />} />
+        <Route path="/edit-product/:id" element={<EditProduct />} />
+      </Routes>
 
-<Footer />  
-</>
-  )
+    </>
+  );
 }
 
-
-export default App
-
+export default App;
